@@ -24,10 +24,15 @@ export default function Navbar() {
             <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" ref={toggleRef} />
             <BootstrapNavbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link as={Link} to="/"
+                    <Nav.Link
+                        as={Link}
+                        to={{
+                            pathname: "/home", // TODO: not working 
+                            hash: "#landing"
+                        }}
                         onClick={() => { handleItemClick() }}>
                         Home
-                </Nav.Link>
+                    </Nav.Link>
 
 
                     <Nav.Link as={Link} to="/about" onClick={() => { handleItemClick() }} >Link</Nav.Link>
