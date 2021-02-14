@@ -5,6 +5,12 @@ import ProjectGrid from '../components/ProjectGrid'
 import Footer from '../components/Footer'
 import Cover from '../components/Cover'
 
+import styled from 'styled-components'
+
+const H3 = styled.h3`
+    text-align: center; 
+    margin: ${props => props.marginY} 0
+`
 
 export default function Home() {
     return (
@@ -13,15 +19,8 @@ export default function Home() {
             <Cover />
 
             <section id="projects" style={{ scrollMarginTop: "57px" }}>
-                <h3 style={{ textAlign: "center", margin: "20px 0" }}>
-                    Projects
-                </h3>
-
-                <div style={{ display: "flex", justifyContent: "space-around" }}>
-                    <div style={{ width: "90%" }}>
-                        <ProjectGrid />
-                    </div>
-                </div>
+                <H3 marginY="20px">Projects</H3>
+                <ProjectGrid width="90%" />
             </section>
 
             <Footer marginTop="40px" />

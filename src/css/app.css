@@ -64,7 +64,6 @@ h5 {
     align-items    : center;
     justify-content: center;
     width          : 100%;
-    font-size      : 25px;
     text-align     : center;
     top            : 0;
     overflow       : hidden;
@@ -74,6 +73,8 @@ h5 {
     background-color: rgba(201, 201, 201, 0.5);
     width           : 80%;
     padding         : 25px 10px;
+    font-size       : 25px;
+
 }
 
 .grid {
@@ -83,14 +84,13 @@ h5 {
 }
 
 
-/* 665 is from trial and error. Above the text would be shown in one line */
+/* 665 is from trial and error. Above 665 the text would be shown in one line */
 @media only screen and (min-width: 665px) {
 
     .header-image-overlay {
-        display  : flex;
-        right    : 52vw;
-        width    : calc(100% - 52vw);
-        font-size: 30px;
+        display: flex;
+        right  : 52vw;
+        width  : calc(100% - 52vw);
 
         top   : 30vh;
         height: auto;
@@ -100,6 +100,7 @@ h5 {
         width     : 50%;
         max-height: 55vh;
         overflow  : hidden;
+        font-size : 30px;
     }
 
 }

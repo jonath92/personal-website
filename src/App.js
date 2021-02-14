@@ -4,7 +4,6 @@ import Home from './pages/Home'
 import About from './pages/About'
 import './css/app.css';
 
-
 export default function App() {
   return (
     <div>
