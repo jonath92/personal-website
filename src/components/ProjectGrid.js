@@ -12,7 +12,7 @@ export default function ProjectGrid() {
         <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            width: "90%"
+            gap: "2em"
         }}>
 
             <ProjectCard
@@ -24,11 +24,11 @@ export default function ProjectGrid() {
                     text: "View in Cinnamon Store"
                 }}
                 description={
-                    <p>
+                    <span>
                         Linux Mint is one of the most popular Linux distributions. A key feature of the distribution is the large number of easy installable extensions such as the Radio Applet.
                         <br /> <br />
                         I have made multiple contributions to the Applet and currently being the official maintainer of the extension.
-                    </p>
+                    </span>
                 }
             />
 
@@ -41,11 +41,11 @@ export default function ProjectGrid() {
                     text: "View in Cinnamon Store"
                 }}
                 description={
-                    <p>
+                    <span>
                         Joplin is for several reason an outstanding note-taking app. It is open-source, cross plattform and is probably the best note-taking app for developers as the notes are saved in Markdown format.
                         <br /> <br />
                         For the synchronisation users can select from a variety of cloud storage providers. However when I started using Joplin I was frustrated that it was not possible to synchronize attachments larger than 4 MB which I therefore fixed. Since then I also made some other contributions to the project.
-                    </p>
+                    </span>
                 }
             />
 
@@ -58,9 +58,9 @@ export default function ProjectGrid() {
                     text: "View in Cinnamon Store"
                 }}
                 description={
-                    <p>
+                    <span>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit facere alias, consequuntur laboriosam fugit, dolor quibusdam, cumque repellat commodi dolorem nemo blanditiis molestias exercitationem obcaecati dolores fugiat pariatur vero vel.
-                    </p>
+                    </span>
                 }
             />
 
@@ -73,13 +73,11 @@ export default function ProjectGrid() {
                     text: "View in Cinnamon Store"
                 }}
                 description={
-                    <p>
+                    <span>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit facere alias, consequuntur laboriosam fugit, dolor quibusdam, cumque repellat commodi dolorem nemo blanditiis molestias exercitationem obcaecati dolores fugiat pariatur vero vel.
-                    </p>
+                    </span>
                 }
             />
-
-
         </div>
     )
 }
