@@ -57,23 +57,20 @@ h5 {
     z-index   : -1;
 }
 
-.header-image-overlay {
-    position       : absolute;
-    height         : 100vh;
-    display        : flex;
-    align-items    : center;
-    justify-content: center;
-    width          : 100%;
-    text-align     : center;
-    top            : 0;
-    overflow       : hidden;
-}
-
 .header-image-textbox {
     background-color: rgba(201, 201, 201, 0.5);
-    width           : 80%;
-    padding         : 25px 10px;
-    font-size       : 25px;
+    position        : absolute;
+    top             : 50%;
+    transform       : translateY(-50%);
+    text-align      : center;
+
+    left  : 0;
+    right : 0;
+    margin: auto;
+
+    width    : calc(100vw * 0.8);
+    padding  : 25px 10px;
+    font-size: 25px;
 
 }
 
@@ -87,17 +84,9 @@ h5 {
 /* 665 is from trial and error. Above 665 the text would be shown in one line */
 @media only screen and (min-width: 665px) {
 
-    .header-image-overlay {
-        display: flex;
-        right  : 52vw;
-        width  : calc(100% - 52vw);
-
-        top   : 30vh;
-        height: auto;
-    }
-
     .header-image-textbox {
-        width     : 50%;
+        width     : calc(0.5 * 48vw);
+        right     : 52vw;
         max-height: 55vh;
         overflow  : hidden;
         font-size : 30px;
