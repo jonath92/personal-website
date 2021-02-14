@@ -25,7 +25,6 @@ export default function Home() {
 
             <Footer marginTop="40px" />
 
-
         </>
     )
 }

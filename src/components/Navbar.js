@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+
 import { Nav, Navbar as BootstrapNavbar, NavDropdown } from 'react-bootstrap';
 
 
@@ -17,6 +18,31 @@ export default function Navbar() {
         }
     }
 
+    function renderNavLink(path, name) {
+        return (
+            <Nav.Link
+                as={HashLink}
+                to={path}
+                onClick={() => { handleItemClick() }}
+            >
+                {name}
+            </Nav.Link>
+        )
+    }
+
+    function renderDropDownItem(path, name) {
+        return (
+            <NavDropdown.Item
+                as={HashLink}
+                to={path}
+                onClick={() => { handleItemClick() }}
+                active={false}
+            >
+                {name}
+            </NavDropdown.Item>
+        )
+    }
+
 
     return (
 
@@ -24,36 +50,24 @@ export default function Navbar() {
             <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" ref={toggleRef} />
             <BootstrapNavbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link
-                        as={Link}
-                        to={{
-                            pathname: "/home", // TODO: not working 
-                            hash: "#landing"
-                        }}
-                        onClick={() => { handleItemClick() }}>
-                        Home
-                    </Nav.Link>
+                    {renderNavLink("/home#landing", "Home")}
+                    {/* {renderNavLink("/about", "About me")} */}
 
-
-                    <Nav.Link as={Link} to="/about" onClick={() => { handleItemClick() }} >Link</Nav.Link>
 
                     <NavDropdown title="Projects" id="basic-nav-dropdown">
-                        <NavDropdown.Item onClick={() => { handleItemClick() }} href="#projects" data-toggle="collapse" data-target=".navbar-collapse.show">Overview</NavDropdown.Item>
+                        {renderDropDownItem("/home#projects", "Overview")}
                         <NavDropdown.Divider />
 
-                        <NavDropdown.Item onClick={() => { handleItemClick() }} href="#action/3.2">Another action</NavDropdown.Item>
+                        {/* <NavDropdown.Item
+                            onClick={() => { handleItemClick() }}
+                            href="#action/3.2">Another action</NavDropdown.Item>
                         <NavDropdown.Item onClick={() => { handleItemClick() }} href="#action/3.3">Something</NavDropdown.Item>
-                        <NavDropdown.Item onClick={() => { handleItemClick() }} href="#action/3.4">Separated link</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => { handleItemClick() }} href="#action/3.4">Separated link</NavDropdown.Item> */}
                     </NavDropdown>
                 </Nav>
 
             </BootstrapNavbar.Collapse>
         </BootstrapNavbar>
-
-        // <ul>
-        //     <Link to='./home' >Home</Link>
-        //     <Link to='./about' >About</Link>
-        // </ul>
 
     )
 }
