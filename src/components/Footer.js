@@ -66,12 +66,19 @@ export default function Footer({ marginTop }) {
 
             <BelowContainer>
                 <P>&copy; Jonathan Heard</P>
-                <P mdOnly> &nbsp; | &nbsp;  </P>
-                <StyledLink to="/disclaimer"> Disclaimer</StyledLink>
-                <P mdOnly> &nbsp; | &nbsp;  </P>
-                <P>
-                    Image and Media Copyrights
+                <P mdOnly>
+                    &nbsp; | &nbsp;
                 </P>
+                <StyledLink to="/disclaimer">
+                    Disclaimer
+                </StyledLink>
+                <P mdOnly>
+                    &nbsp; | &nbsp;
+                </P>
+                <StyledLink to="/copyrights">
+                    Image and Media Copyrights
+                </StyledLink>
+
             </BelowContainer>
         </OuterContainer >
     )

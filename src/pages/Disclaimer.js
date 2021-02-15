@@ -8,7 +8,7 @@ export default function Imprint() {
     return (
         <>
             <Navbar />
-            <DisclaimerText paddingTop="75px" />
+            <DisclaimerText paddingTop="65px" />
             <Footer />
         </>
     )
