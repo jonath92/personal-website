@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import styled from 'styled-components'
+import { v4 as uuidv4 } from 'uuid';
 
 const ImageContainer = styled.div`
     width: 100%;
@@ -16,7 +17,19 @@ export default function ProjectCard(props) {
         imgWidth,
         title,
         description,
-        link } = props
+        links } = props
+
+
+    function renderLinks() {
+        return links.map(link => {
+            return (
+                <Card.Link key={uuidv4()} href={link.href}>
+                    {link.text}
+                </Card.Link>
+            )
+        })
+    }
+
 
     return (
         <Card style={{ padding: "1em" }}>
@@ -30,8 +43,8 @@ export default function ProjectCard(props) {
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>{description}</Card.Text>
-                <Card.Link href={link.href}>{link.text}</Card.Link>
-
+                {renderLinks()}
+                <Card.Link href={links[0].href}>{links[0].text}</Card.Link>
             </Card.Body>
 
         </Card>

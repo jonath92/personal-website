@@ -50,12 +50,12 @@ export default function Navbar() {
             <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" ref={toggleRef} />
             <BootstrapNavbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    {renderNavLink("/home#landing", "Home")}
+                    {renderNavLink("/#landing", "Home")}
                     {/* {renderNavLink("/about", "About me")} */}
 
 
                     <NavDropdown title="Projects" id="basic-nav-dropdown">
-                        {renderDropDownItem("/home#projects", "Overview")}
+                        {renderDropDownItem("/#projects", "Overview")}
                         <NavDropdown.Divider />
 
                         {/* <NavDropdown.Item

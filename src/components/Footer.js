@@ -2,15 +2,20 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
 import styled from 'styled-components'
+import { Link } from "react-router-dom";
 
 const OuterContainer = styled.section`
-    height         : 120px;
+    height         : 150px;
     background     : #e9eced;
     display        : flex;
     flex-direction : column;
     align-items    : center;
     justify-content: space-evenly;
-    margin-top      :${props => props.marginTop}
+    margin-top      :${props => props.marginTop};
+
+    @media only screen and (min-width: 768px) {
+        height         : 120px;
+    }
 `
 const TopContainer = styled.div` 
     display: flex;
@@ -19,10 +24,23 @@ const TopContainer = styled.div`
 `
 const BelowContainer = styled.div`
     display: flex;
-    justify-content: center
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (min-width: 768px) {
+        flex-direction  : row;
+        right    : 52vw;
+    }
 `
 const P = styled.p`
-    margin: 0
+    margin: 0;
+    display: ${props => props.mdOnly ? 'none' : 'initial'};
+    @media only screen and (min-width: 768px) {
+        display  :  initial;
+    }
+`
+const StyledLink = styled(Link)`
+    color: black
 `
 
 export default function Footer({ marginTop }) {
@@ -48,8 +66,12 @@ export default function Footer({ marginTop }) {
 
             <BelowContainer>
                 <P>&copy; Jonathan Heard</P>
-                <P> &nbsp; | &nbsp;  </P>
-                <P>Disclaimer</P>
+                <P mdOnly> &nbsp; | &nbsp;  </P>
+                <StyledLink to="/disclaimer"> Disclaimer</StyledLink>
+                <P mdOnly> &nbsp; | &nbsp;  </P>
+                <P>
+                    Image and Media Copyrights
+                </P>
             </BelowContainer>
         </OuterContainer >
     )
