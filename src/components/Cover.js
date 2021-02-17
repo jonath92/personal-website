@@ -38,7 +38,7 @@ export default function Cover() {
 
     return (
         <>
-            <FullPageImage id="landing" src={background} />
+            <FullPageImage src={background} />
             <Textbox>
                 <h2>Hello, I’m Jonathan Heard. </h2>
                 <h3>I want to make things that make a difference</h3>

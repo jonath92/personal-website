@@ -52,7 +52,7 @@ export default function Navbar() {
             <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" ref={toggleRef} />
             <BootstrapNavbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    {renderNavLink("/#landing", "Home")}
+                    {renderNavLink("/", "Home")}
                     {/* {renderNavLink("/about", "About me")} */}
 
 
