@@ -11,7 +11,6 @@ const ImageContainer = styled.div`
 export default function ProjectCard(props) {
 
     // TODO calculate imgWidth automatically
-    // TODO links as array
     const {
         img,
         imgWidth,

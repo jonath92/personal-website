@@ -8,6 +8,8 @@ export default function Navbar() {
 
     const toggleRef = useRef()
 
+
+
     // This is to close the Hamburger Menu when clicking on an item. Not optimal but working ... 
     function handleItemClick() {
         // 768 px is width of md for bootstrap. https://getbootstrap.com/docs/4.0/layout/grid/ 

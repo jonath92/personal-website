@@ -19,6 +19,7 @@ const Grid = styled.div`
     width: ${props => props.width}
 `
 export default function ProjectGrid({ width }) {
+
     return (
         <GridContainer>
             <Grid {...{ width }}>
