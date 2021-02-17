@@ -11,7 +11,7 @@ import ScrollToTop from 'react-router-scroll-top'
 export default function App() {
   return (
     <div>
-      <HashRouter>
+      <Router>
         <ScrollToTop>
           <Route exact path='/' component={Home} />
           <Route exact path='/home' component={Home} />
@@ -21,7 +21,7 @@ export default function App() {
         </ScrollToTop>
 
 
-      </HashRouter>
+      </Router>
     </div>
   )
 }
