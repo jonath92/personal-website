@@ -10,18 +10,14 @@ import ScrollToTop from 'react-router-scroll-top'
 
 export default function App() {
   return (
-    <div>
-      <Router>
-        <ScrollToTop>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/home' component={Home} />
-          <Route exact path='/about' component={About} />
-          <Route exact path='/disclaimer' component={Disclaimer} />
-          <Route exact path='/copyrights' component={Copyrights} />
-        </ScrollToTop>
-
-
-      </Router>
-    </div>
+    <Router>
+      <ScrollToTop>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/home' component={Home} />
+        <Route exact path='/about' component={About} />
+        <Route exact path='/disclaimer' component={Disclaimer} />
+        <Route exact path='/copyrights' component={Copyrights} />
+      </ScrollToTop>
+    </Router>
   )
 }

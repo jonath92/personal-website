@@ -9,9 +9,11 @@ const OuterContainer = styled.section`
     background     : #e9eced;
     display        : flex;
     flex-direction : column;
+    flex-shrink: 0;
     align-items    : center;
     justify-content: space-evenly;
     margin-top      :${props => props.marginTop};
+    width: 100%;
 
     @media only screen and (min-width: 768px) {
         height         : 120px;
