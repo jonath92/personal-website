@@ -17,6 +17,7 @@ const Textbox = styled.div`
     top             : 50%;
     transform       : translateY(-50%);
     text-align      : center;
+    font-family     : "Raleway", sans-serif;
 
     left  : 0;
     right : 0;

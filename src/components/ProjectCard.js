@@ -8,6 +8,12 @@ const ImageContainer = styled.div`
     text-align: center
 `
 
+const SpanTouchOnly = styled.div` 
+
+    @media not screen and (pointer: coarse) {
+        display: none
+    }
+`
 export default function ProjectCard(props) {
 
     // TODO calculate imgWidth automatically
@@ -42,8 +48,12 @@ export default function ProjectCard(props) {
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>{description}</Card.Text>
-                {renderLinks()}
-                <Card.Link href={links[0].href}>{links[0].text}</Card.Link>
+                {/* {renderLinks()} */}
+                {/* <Card.Link href={links[0].href}>{links[0].text}</Card.Link> */}
+                <a href="/joplin" className="stretched-link">
+                    <SpanTouchOnly>View Details</SpanTouchOnly>
+                </a>
+
             </Card.Body>
 
         </Card>
