@@ -1,9 +1,9 @@
 import React from 'react'
 
 // paddingTop is useful when havving an Navbar with position fixed
-export default function DisclaimerText({ paddingTop }) {
+export default function DisclaimerText({ paddingTop, width }) {
     return (
-        <div style={{ paddingTop: `${paddingTop}` }} className="mx-2">
+        <div style={{ paddingTop: `${paddingTop}`, width }} className="mx-2">
             <h1>Disclaimer</h1>
             <p>Last updated: February 15, 2021</p>
             <h1>Interpretation and Definitions</h1>

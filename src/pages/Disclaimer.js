@@ -8,8 +8,11 @@ export default function Imprint() {
     return (
         <>
             <Navbar />
-            <DisclaimerText paddingTop="65px" />
-            <Footer />
+            <div style={{ display: "flex", justifyContent: "space-around" }} >
+                <DisclaimerText width="90%" paddingTop="75px" />
+
+            </div>
+            <Footer marginTop="40px" />
         </>
     )
 }
