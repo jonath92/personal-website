@@ -7,6 +7,7 @@ import Copyrights from './pages/Copyrights'
 import './css/app.css';
 import ScrollToTop from 'react-router-scroll-top'
 import Joplin from './pages/Joplin';
+import RadioApplet from './pages/RadioApplet'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route exact path='/disclaimer' component={Disclaimer} />
         <Route exact path='/copyrights' component={Copyrights} />
         <Route exact path='/joplin' component={Joplin} />
+        <Route exact path='/radio-applet' component={RadioApplet} />
       </ScrollToTop>
     </Router>
   )

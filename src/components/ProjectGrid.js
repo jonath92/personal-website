@@ -27,12 +27,7 @@ export default function ProjectGrid({ width }) {
                     img={radio}
                     imgWidth="40%"
                     title="Linux Mint Radio Applet"
-                    links={[
-                        {
-                            href: "https://cinnamon-spices.linuxmint.com/applets/view/297",
-                            text: "View in Cinnamon Store",
-                        }
-                    ]}
+                    href="/radio-applet"
                     description={
                         <span>
                             Linux Mint is one of the most popular Linux distributions. A key feature of the distribution is the large number of easy installable extensions such as the Radio Applet.
@@ -46,12 +41,7 @@ export default function ProjectGrid({ width }) {
                     img={joplin}
                     imgWidth="40%"
                     title="Joplin"
-                    links={[
-                        {
-                            href: "https://cinnamon-spices.linuxmint.com/applets/view/297",
-                            text: "View in Cinnamon Store"
-                        }
-                    ]}
+                    href="/joplin"
                     description={
                         <span>
                             Joplin is for several reason an outstanding note-taking app. It is open-source, cross plattform and is probably the best note-taking app for developers as the notes are saved in Markdown format.
@@ -65,12 +55,7 @@ export default function ProjectGrid({ width }) {
                     img={zugabe}
                     imgWidth="40%"
                     title="Zugabe"
-                    links={[
-                        {
-                            href: "https://cinnamon-spices.linuxmint.com/applets/view/297",
-                            text: "View in Cinnamon Store"
-                        }
-                    ]}
+                    href="/joplin"
                     description={
                         <span>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit facere alias, consequuntur laboriosam fugit, dolor quibusdam, cumque repellat commodi dolorem nemo blanditiis molestias exercitationem obcaecati dolores fugiat pariatur vero vel.
@@ -82,12 +67,7 @@ export default function ProjectGrid({ width }) {
                     img={eisenhower}
                     imgWidth="35%"
                     title="Eisenhower Matrix"
-                    links={[
-                        {
-                            href: "https://cinnamon-spices.linuxmint.com/applets/view/297",
-                            text: "View in Cinnamon Store"
-                        }
-                    ]}
+                    href="/joplin"
                     description={
                         <span>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit facere alias, consequuntur laboriosam fugit, dolor quibusdam, cumque repellat commodi dolorem nemo blanditiis molestias exercitationem obcaecati dolores fugiat pariatur vero vel.
