@@ -1,16 +1,16 @@
 import React from 'react'
 import CopyrightsGrid from '../components/CopyrightsGrid'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-
+import PageLayout from '../components/PageLayout'
 
 export default function Copyrights() {
     return (
-        <div style={{ height: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <Navbar />
-            <CopyrightsGrid width="90%" paddingTop="75px" />
-            <Footer marginTop="40px" />
+        <PageLayout>
+            <div style={{ width: "90%" }}>
+                <h2 className="mb-3">Copyrights</h2>
+                <p className="mb-4">All mediafiles except the following are owned by the operator of this website.</p>
+                <CopyrightsGrid />
+            </div>
+        </PageLayout>
 
-        </div>
     )
 }

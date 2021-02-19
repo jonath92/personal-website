@@ -13,10 +13,6 @@ const Img = styled.img.attrs(({
     width: 150px;
     max-width: 50vw
 `
-const P = styled.p`
-    margin: 0;
-    padding: 0;
-`
 
 function LinksContainer({ links }) {
     return (
