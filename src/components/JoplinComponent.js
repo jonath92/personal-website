@@ -1,42 +1,52 @@
 import React from 'react'
-import styled from 'styled-components'
-import joplinIcon from '../images/Joplin-icon.svg'
+import styled from 'styled-components/macro'
 import ListGroup from 'react-bootstrap/ListGroup'
 
 const OuterContainer = styled.div` 
     width: 90%;
-    max-width: 600px
+    max-width: 600px;
+    padding-top: 75px;
 `
 
-function LinkSubHeading() {
+const Img = styled.img.attrs(props => ({
+    className: "my-3"
+}))`
+    width: 150px;
+    max-width: 50vw
+`
+
+function LinksContainer({ links }) {
     return (
         <div>
-            <a href="https://github.com/laurent22/joplin/pulls?q=is:merged+is:pr+author:jonath92">
-                View my Contributions at Github</a>
-            {/* <br /> */}
-            <span> &nbsp;|&nbsp; </span>
-            <a href="wwww.google.de">View in Cinnamon Store</a>
+            {links.map((link, index) => {
+                return (
+                    <span key={link.text}>
+                        <a href={link.href}>{link.text}</a>
+                        {index < links.length - 1 &&
+                            <span> &nbsp;| &nbsp;</span>}
+                    </span>
+                )
+            })}
         </div>
     )
 }
 
 
-export default function Joplin() {
+export default function Joplin(props) {
+
+    const { heading, subHeading, links, img } = props
+
     return (
         <OuterContainer>
-            <h1 className="mb-3">Joplin</h1>
-
-            <h4>First contributions to a Project with more than 100K Downloads</h4>
-
-            <LinkSubHeading />
-
-            <img className="my-3" style={{ width: "150px", maxWidth: "50vw" }} src={joplinIcon}></img>
-
+            <header>
+                <h1 className="mb-3">{heading}</h1>
+                <h4>{subHeading}</h4>
+                <LinksContainer {...{ links }} />
+                <Img src={img} />
+            </header>
 
             <div>
-
                 <p >
-
                     With 21k stars at Github and more than 100k Downloads in the Google Play Store, I assume Joplin is the most used open source note taking app at all. Initially I started using Joplin because it was and I think still is the only note taking app with native support for all major operating systems (Linux based systems, macOS, Windows, Android, iOS) and synchronisation capability. Another unique feature of Joplin is that the users aren't tied to any particual service for synchronisation but can choose between a wide range of providers. Currently Joplin supports inter alia OneDrive, Nextcloud and Dropbox.
                 </p>
 

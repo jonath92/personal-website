@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { v4 as uuidv4 } from 'uuid';
 
 const ImageContainer = styled.div`

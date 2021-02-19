@@ -6,7 +6,7 @@ import joplin from '../images/Joplin-icon.svg'
 import zugabe from '../images/zugabe.svg'
 import eisenhower from '../images/calendar-check-solid.svg'
 
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const GridContainer = styled.div`
     display: flex;

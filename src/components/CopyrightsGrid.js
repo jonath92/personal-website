@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import metadata from '../images/metadata.json'
 import { v4 as uuidv4 } from 'uuid';
 
