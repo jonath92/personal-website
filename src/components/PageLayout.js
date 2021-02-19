@@ -18,15 +18,26 @@ const Content = styled.div`
     /* padding-top is 56 px which is the height of the Navbar + 10 px as this looks like. 
     This value should ensure that the distance between content and footer and content and header are roughly the same when using h1 in the beginning of Content. This is roughly the case because of the line height of h1 - however hasn't been properly calculated. 
      */
-    padding-top: 66px;
-    padding-bottom: 30px
+    padding-top: ${props => props.landingPage ? "0" : "66px"};
+    padding-bottom: 30px;
+
+    /* TODO: this should actually be applied to all elements with an ID ...  */
+    section, h1, h2, h3, h4, h5, h6 {
+        scroll-margin-top: 56px
+    }
 `
 
-export default function PageLayout({ children }) {
+export default function PageLayout(props) {
+
+    const {
+        children,
+        landingPage = false // a page with a 100 vh image
+    } = props
+
     return (
         <OuterContainer>
             <Navbar />
-            <Content>
+            <Content {...{ landingPage }}>
                 {children}
             </Content>
             <Footer />

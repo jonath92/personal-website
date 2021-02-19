@@ -83,6 +83,7 @@ export default function Joplin(props) {
             <TechnicsContainer {...{ technics }} />
             {paragraphs[1]}
 
+
             <QuoteContainer {...{ cite }} {...{ citeReference }} />
             {paragraphs[2]}
         </OuterContainer >
