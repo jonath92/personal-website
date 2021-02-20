@@ -3,7 +3,6 @@ import styled from 'styled-components/macro'
 import metadata from '../images/metadata.json'
 import { v4 as uuidv4 } from 'uuid';
 
-
 const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(130px, 130px));
@@ -89,7 +88,6 @@ export default function CopyrightsGrid({ paddingTop, width }) {
             </GridItem>
         )
     }
-
 
     return (
         <GridContainer {...{ width }} {...{ paddingTop }}>
