@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
-import metadata from '../images/metadata.json'
+import metadata from '../images/external/metadata.json'
 import { v4 as uuidv4 } from 'uuid';
+
+import { importAll } from '../utils'
 
 const Grid = styled.div`
     display: grid;
@@ -48,16 +50,7 @@ const P = styled.p`
     margin: 0
 `
 
-// loading all images. Based on https://shaquillegalimba.medium.com/how-to-import-multiple-images-in-react-1936efeeae7b
-function importAll(r) {
-    let images = {};
-    r.keys().forEach((item, index) => {
-        images[item.replace('./', '')] = r(item);
-    });
-    return images
-}
-
-const imageObjects = importAll(require.context('../images', false, /\.(png|jpe?g|svg)$/));
+const imageObjects = importAll(require.context('../images/external', false, /\.(png|jpe?g|svg)$/));
 
 
 export default function CopyrightsGrid({ paddingTop, width }) {

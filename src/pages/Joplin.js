@@ -1,6 +1,6 @@
 import React from 'react'
 import JoplinComponent from '../components/JoplinComponent'
-import joplinIcon from '../images/Joplin-icon.svg'
+import joplinIcon from '../images/external/Joplin-icon.svg'
 import PageLayout from '../components/PageLayout'
 
 

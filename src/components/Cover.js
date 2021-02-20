@@ -1,5 +1,5 @@
 import React from 'react'
-import background from '../images/pexels-lukas-574069.jpg'
+import background from '../images/external/pexels-lukas-574069.jpg'
 import styled from 'styled-components/macro'
 
 const FullPageImage = styled.img`
