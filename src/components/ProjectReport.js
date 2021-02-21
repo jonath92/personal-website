@@ -11,22 +11,24 @@ const ProjectReport = styled.div`
     width: 90%;
     max-width: 600px;
     
-    P:last-child {
+    /* * selects any element - regardless of tag  */
+    *:last-child {
         margin-bottom: 0!important
     }
     
 `
-ProjectReport.header = styled.div.attrs(({
+ProjectReport.Header = styled.div.attrs(({
     className: "mb-3"
-}))``
+}))`
+`
 
 ProjectReport.P = styled.p.attrs(({
     className: "my-3"
 }))``
 
-ProjectReport.title = styled.h2``
+ProjectReport.Title = styled.h2``
 
-ProjectReport.subtitle = styled.h4``
+ProjectReport.Subtitle = styled.h4``
 
 ProjectReport.LinksGroup = ({ children }) => {
     return (
@@ -92,5 +94,12 @@ ProjectReport.Quote = ({ cite, citeReference }) => {
         </blockquote>
     )
 }
+
+ProjectReport.Img = styled.img.attrs(({
+    className: "my-3"
+}))`
+    width: 150px;
+    max-width: 50vw
+`
 
 export { ProjectReport }

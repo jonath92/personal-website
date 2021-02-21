@@ -4,10 +4,8 @@ import { ProjectReport } from '../components/ProjectReport'
 import styled from 'styled-components/macro'
 import { importAllImgFromDirWithoutKey } from '../utils'
 
-
+// TODO: is it possible to move this to the ProjectReportComponent?
 const imgContext = require.context('../images/screenshots/radio', false, /\.(png|jpe?g|svg)$/)
-
-
 const screenshots = importAllImgFromDirWithoutKey(imgContext)
 
 // link is shown in same color as text but with a mouse-pointer ascursor 
@@ -21,15 +19,15 @@ export default function RadioApplet() {
     return (
         <PageLayout>
             <ProjectReport>
-                <ProjectReport.header>
-                    <ProjectReport.title>
+                <ProjectReport.Header>
+                    <ProjectReport.Title>
                         Linux Mint Radio Applet
-                    </ProjectReport.title>
-                    <ProjectReport.subtitle>
+                    </ProjectReport.Title>
+                    <ProjectReport.Subtitle>
                         My <A href="https://www.wordnik.com/words/pet%20project">
                             Pet Project
                         </A>
-                    </ProjectReport.subtitle>
+                    </ProjectReport.Subtitle>
                     <ProjectReport.LinksGroup>
                         <a
                             href="https://github.com/linuxmint/cinnamon-spices-applets/tree/master/radio@driglu4it"
@@ -42,8 +40,7 @@ export default function RadioApplet() {
                             View in Cinnamon Store
                         </a>
                     </ProjectReport.LinksGroup>
-                </ProjectReport.header>
-
+                </ProjectReport.Header>
 
                 <ProjectReport.Carousel {...{ screenshots }} />
 
@@ -51,7 +48,7 @@ export default function RadioApplet() {
                     I like listening to the radio as it allows you to discover new music and catching up with the latest news. While plenty of radio applications exist, I was never able to find an application which fully could meet my requirements. As a regulary radio listener, I want to start or change a radio channel with as few clicks as possible. As far as I can see this requirement is best met with applications with a tray icon and a corresponding left-click menu. In Linux Mint (and other Linux Distributions which use Cinnamon as Desktop Environment) these type of Software can easily be installed by so called Applets.
                 </ProjectReport.P>
 
-                <ProjectReport.TechnicsGroup technics={["JS", "D-BUS"]} />
+                <ProjectReport.TechnicsGroup technics={["JS", "GIT", "D-BUS"]} />
 
                 <ProjectReport.P>
                     When I started using the Linux Mint Radio Applet, it was very close to my ideal. However I found it  annoying that it was not possible to obtain the current playing song title. As a Linux Mint user you usually can see the title of the current playing media on the panel (i.e. taskbar) with the sound applet or with the Android Application kdeconnect but unfortunately this didn't work for the radio Applet. Out of curiosity, I made some reasearch why this was the case. I than found out that the reason for that was that the radio Applet used a Media Player under the hood which hasn't implemented the <i>Media Player Remote Interface Specification</i> (MPRIS). After I found the root of the problem, I also wanted to fix the problem.
