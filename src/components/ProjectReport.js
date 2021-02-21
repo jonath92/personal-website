@@ -7,8 +7,7 @@ import chevronRight from '../images/chevron-circle-right-solid.svg'
 import Carousel from 'react-bootstrap/Carousel'
 import ListGroup from 'react-bootstrap/ListGroup'
 
-
-const RadioComponent = styled.div` 
+const ProjectReport = styled.div` 
     width: 90%;
     max-width: 600px;
     
@@ -17,21 +16,19 @@ const RadioComponent = styled.div`
     }
     
 `
-
-RadioComponent.header = styled.div.attrs(({
+ProjectReport.header = styled.div.attrs(({
     className: "mb-3"
 }))``
 
-RadioComponent.P = styled.p.attrs(({
+ProjectReport.P = styled.p.attrs(({
     className: "my-3"
 }))``
 
-RadioComponent.title = styled.h2``
+ProjectReport.title = styled.h2``
 
-RadioComponent.subtitle = styled.h4``
+ProjectReport.subtitle = styled.h4``
 
-
-RadioComponent.LinksGroup = ({ children }) => {
+ProjectReport.LinksGroup = ({ children }) => {
     return (
         <div>
             {React.Children.map(children, (child, index) => {
@@ -47,7 +44,7 @@ RadioComponent.LinksGroup = ({ children }) => {
     )
 }
 
-RadioComponent.Carousel = ({ screenshots }) => {
+ProjectReport.Carousel = ({ screenshots }) => {
     return (
         <Carousel
             className="my-4"
@@ -70,7 +67,7 @@ RadioComponent.Carousel = ({ screenshots }) => {
     )
 }
 
-RadioComponent.TechnicsGroup = ({ technics }) => {
+ProjectReport.TechnicsGroup = ({ technics }) => {
     return (
         <div className="my-4">
             <ListGroup horizontal className="mb-1">
@@ -86,7 +83,7 @@ RadioComponent.TechnicsGroup = ({ technics }) => {
     )
 }
 
-RadioComponent.Quote = ({ cite, citeReference }) => {
+ProjectReport.Quote = ({ cite, citeReference }) => {
     return (
         <blockquote className="blockquote my-4 ">
             {/* mb-0 is used in the bootstrap docs https://getbootstrap.com/docs/4.0/content/typography/#naming-a-source  */}
@@ -96,4 +93,4 @@ RadioComponent.Quote = ({ cite, citeReference }) => {
     )
 }
 
-export { RadioComponent }
+export { ProjectReport }
