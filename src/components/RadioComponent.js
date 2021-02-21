@@ -8,24 +8,32 @@ import Carousel from 'react-bootstrap/Carousel'
 import ListGroup from 'react-bootstrap/ListGroup'
 
 
-const OuterContainer = styled.div` 
+const RadioComponent = styled.div` 
     width: 90%;
     max-width: 600px;
+    
+    P:last-child {
+        margin-bottom: 0!important
+    }
+    
 `
 
-const RadioComponent = ({ children }) => {
+RadioComponent.header = styled.div.attrs(({
+    className: "mb-3"
+}))``
+
+RadioComponent.P = styled.p.attrs(({
+    className: "my-3"
+}))``
+
+RadioComponent.title = styled.h2``
+
+RadioComponent.subtitle = styled.h4``
+
+
+RadioComponent.LinksGroup = ({ children }) => {
     return (
-        <OuterContainer>
-            {children}
-        </OuterContainer>
-    )
-}
-
-
-
-const RadioLinks = ({ children, className }) => {
-    return (
-        <div className={className}>
+        <div>
             {React.Children.map(children, (child, index) => {
                 return (
                     <span >
@@ -39,7 +47,7 @@ const RadioLinks = ({ children, className }) => {
     )
 }
 
-const RadioCarousel = ({ screenshots }) => {
+RadioComponent.Carousel = ({ screenshots }) => {
     return (
         <Carousel
             className="my-4"
@@ -62,9 +70,9 @@ const RadioCarousel = ({ screenshots }) => {
     )
 }
 
-const RadioTechnics = ({ technics, className }) => {
+RadioComponent.TechnicsGroup = ({ technics }) => {
     return (
-        <div className={className}>
+        <div className="my-4">
             <ListGroup horizontal className="mb-1">
                 {technics.map(technic => {
                     return (
@@ -78,7 +86,7 @@ const RadioTechnics = ({ technics, className }) => {
     )
 }
 
-const RadioQuote = ({ cite, citeReference }) => {
+RadioComponent.Quote = ({ cite, citeReference }) => {
     return (
         <blockquote className="blockquote my-4 ">
             {/* mb-0 is used in the bootstrap docs https://getbootstrap.com/docs/4.0/content/typography/#naming-a-source  */}
@@ -87,11 +95,5 @@ const RadioQuote = ({ cite, citeReference }) => {
         </blockquote>
     )
 }
-
-
-RadioComponent.Carousel = RadioCarousel
-RadioComponent.Links = RadioLinks
-RadioComponent.Technics = RadioTechnics
-RadioComponent.Quote = RadioQuote
 
 export { RadioComponent }
