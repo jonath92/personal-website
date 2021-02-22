@@ -21,7 +21,6 @@ ProjectReport.Header = styled.div.attrs(({
     className: "mb-3"
 }))`
 `
-
 ProjectReport.P = styled.p.attrs(({
     className: "my-3"
 }))``

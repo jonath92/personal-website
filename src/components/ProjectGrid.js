@@ -70,8 +70,11 @@ export default function ProjectGrid({ width }) {
                     href="/joplin"
                     description={
                         <span>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit facere alias, consequuntur laboriosam fugit, dolor quibusdam, cumque repellat commodi dolorem nemo blanditiis molestias exercitationem obcaecati dolores fugiat pariatur vero vel.
-                    </span>
+                            Organizing tasks and gettings things done can be challenging. Luckily there are well-established approaches which can help us with that. Now it is about time to transfer those methods into the digital age!
+                            <br /> <br />
+
+                            The Eisenhower Matrix is a very-well thought approach for self-management but there is no widespread app for that. Hopefully I can change that...
+                        </span>
                     }
                 />
             </Grid>

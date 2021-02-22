@@ -21,8 +21,7 @@ const Content = styled.div`
     padding-top: ${props => props.landingPage ? "0" : "66px"};
     padding-bottom: 30px;
 
-    /* TODO: this should actually be applied to all elements with an ID ...  */
-    section, h1, h2, h3, h4, h5, h6 {
+    * {
         scroll-margin-top: 56px
     }
 `
