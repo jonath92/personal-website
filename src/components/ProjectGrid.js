@@ -1,10 +1,10 @@
 import React from 'react'
 import ProjectCard from './ProjectCard'
 
-import radio from '../images/external/radioapplet-symbolic.svg'
-import joplin from '../images/external/Joplin-icon.svg'
-import zugabe from '../images/external/zugabe.svg'
-import eisenhower from '../images/external/calendar-check-solid.svg'
+import radioImg from '../images/external/radioapplet-symbolic.svg'
+import joplinImg from '../images/external/Joplin-icon.svg'
+import zugabeImg from '../images/external/zugabe.svg'
+import taskImg from '../images/external/calendar-check-solid.svg'
 
 import styled from 'styled-components/macro'
 
@@ -23,8 +23,26 @@ export default function ProjectGrid({ width }) {
     return (
         <GridContainer>
             <Grid {...{ width }}>
+
+            <ProjectCard
+                    img={taskImg}
+                    imgWidth="35%"
+                    title="Personal Task Managment build with React/Redux"
+                    href="/kanban"
+                    description={
+                        <span>
+                            There are plenty of great task management tools available on the market. But most of them focus more on teams than on individuals. This has the disadvantage that these apps are usually unnecessarily complex for managing pesonal tasks and goals. 
+                            
+                            <br /> <br />
+
+                            For this reason I am currently working on a task management webapp with the focus on personal task management. 
+
+                        </span>
+                    }
+                />
+
                 <ProjectCard
-                    img={radio}
+                    img={radioImg}
                     imgWidth="40%"
                     title="Linux Mint Radio Applet"
                     href="/radio-applet"
@@ -38,7 +56,7 @@ export default function ProjectGrid({ width }) {
                 />
 
                 <ProjectCard
-                    img={joplin}
+                    img={joplinImg}
                     imgWidth="40%"
                     title="Joplin"
                     href="/joplin"
@@ -52,7 +70,7 @@ export default function ProjectGrid({ width }) {
                 />
 
                 <ProjectCard
-                    img={zugabe}
+                    img={zugabeImg}
                     imgWidth="40%"
                     title="Zugabe"
                     href="/joplin"
@@ -63,20 +81,7 @@ export default function ProjectGrid({ width }) {
                     }
                 />
 
-                <ProjectCard
-                    img={eisenhower}
-                    imgWidth="35%"
-                    title="Eisenhower Matrix"
-                    href="/joplin"
-                    description={
-                        <span>
-                            Organizing tasks and gettings things done can be challenging. Luckily there are well-established approaches which can help us with that. Now it is about time to transfer those methods into the digital age!
-                            <br /> <br />
 
-                            The Eisenhower Matrix is a very-well thought approach for self-management but there is no widespread app for that. Hopefully I can change that...
-                        </span>
-                    }
-                />
             </Grid>
         </GridContainer>
     )

@@ -51,7 +51,7 @@ export default function RadioApplet() {
                 <ProjectReport.TechnicsGroup technics={["JS", "GIT", "D-BUS"]} />
 
                 <ProjectReport.P>
-                    When I started using the Linux Mint Radio Applet, it was very close to my ideal. However I found it  annoying that it was not possible to obtain the current playing song title. As a Linux Mint user you usually can see the title of the current playing media on the panel (i.e. taskbar) with the sound applet or with the Android Application kdeconnect but unfortunately this didn't work for the radio Applet. Out of curiosity, I made some reasearch why this was the case. I than found out that the reason for that was that the radio Applet used a Media Player under the hood which hasn't implemented the <i>Media Player Remote Interface Specification</i> (MPRIS). After I found the root of the problem, I also wanted to fix the problem.
+                    When I started using the Linux Mint Radio Applet, it was very close to my ideal. However I found it  annoying that it was not possible to obtain the current playing song title. As a Linux Mint user you usually can see the title of the current playing media on the panel (i.e. taskbar) with the sound applet or on your Smartphone with the App kdeconnect but unfortunately this didn't work for the radio Applet. Out of curiosity, I made some reasearch why this was the case. I than found out that the reason for that was that the radio Applet used a Media Player under the hood which hasn't implemented the <i>Media Player Remote Interface Specification</i> (MPRIS). After I found the root of the problem, I also wanted to fix the problem.
                 </ProjectReport.P>
 
                 <ProjectReport.Quote
@@ -61,7 +61,7 @@ export default function RadioApplet() {
                     </a></span>}
                 />
                 <ProjectReport.P>
-                    Using a player with MPRIS Support opens numerous opportunities to further extend the application. Thanks to the  <a href="https://gi.readthedocs.io/en/latest/goals.html">GObject introspection project</a> it is relatively easy to change the playback status, the volume and the position and also getting informed when it has been changed remotely. Therefore I made already some furthe additions such as adding a play/pause icon in front of the channel to indicate if a channel is playing or paused and an option to copy the title of the current song to the clipboard. After some contribution the founder of the Applet has asked me to replace him as maintainer as he wants to focus on other projects.
+                    Using a player with MPRIS Support opens numerous opportunities to further extend the application. Thanks to <a href="https://en.wikipedia.org/wiki/D-Bus">D-Bus</a> and the <a href="https://gi.readthedocs.io/en/latest/goals.html">GObject introspection project</a> it is relatively easy to change the playback status, the volume and the position and also getting informed when it has been changed remotely. Therefore I made already some furthe additions such as adding a play/pause icon in front of the channel to indicate if a channel is playing or paused and an option to copy the title of the current song to the clipboard. After some contribution the founder of the Applet has asked me to replace him as maintainer as he wants to focus on other projects.
                 </ProjectReport.P>
 
                 <ProjectReport.P>
