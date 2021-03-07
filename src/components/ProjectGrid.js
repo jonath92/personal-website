@@ -27,15 +27,15 @@ export default function ProjectGrid({ width }) {
             <ProjectCard
                     img={taskImg}
                     imgWidth="35%"
-                    title="Personal Task Managment build with React/Redux"
+                    title="Responsive Kanban Board build with React/Redux"
                     href="/kanban"
                     description={
                         <span>
-                            There are plenty of great task management tools available on the market. But most of them focus more on teams than on individuals. This has the disadvantage that these apps are usually unnecessarily complex for managing pesonal tasks and goals. 
+                            Kanban boards are a great way to visualize and manage tasks. Most apps for this purpose on the market however focus more on teams than on individuals and are therefore unnecessarily complex for managing pesonal tasks or are not responsive. 
                             
                             <br /> <br />
 
-                            For this reason I am currently working on a task management webapp with the focus on personal task management. 
+                            For this reason I am currently working on a Kanban webapp with the focus on personal task management. 
 
                         </span>
                     }
