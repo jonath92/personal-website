@@ -24,8 +24,7 @@ export default function ProjectCard(props) {
     Card.Link = function ({ href }) {
         return (
             <a {...{ href }} className="stretched-link">
-                View Details
-                {/* <SpanTouchOnly>View Details</SpanTouchOnly> */}
+                <SpanTouchOnly>View Details</SpanTouchOnly>
             </a>
         )
     }

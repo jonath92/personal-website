@@ -94,11 +94,20 @@ ProjectReport.Quote = ({ cite, citeReference }) => {
     )
 }
 
-ProjectReport.Img = styled.img.attrs(({
+
+ProjectReport.HeaderImg = styled.img.attrs(({
     className: "my-3"
 }))`
     width: 150px;
     max-width: 50vw
 `
+
+ProjectReport.BodyImg = ({ style, src }) => {
+    return (
+        <div className="my-4" style={{ display: "flex", justifyContent: "center" }}>
+            <img {...{ style }} {...{ src }} />
+        </div>
+    )
+}
 
 export { ProjectReport }

@@ -21,7 +21,7 @@ export default function Joplin() {
                             View my Contributions at Github
                         </a>
                     </ProjectReport.LinksGroup>
-                    <ProjectReport.Img src={joplinIcon} />
+                    <ProjectReport.HeaderImg src={joplinIcon} />
                 </ProjectReport.Header>
 
                 <ProjectReport.P>
