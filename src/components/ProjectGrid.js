@@ -73,10 +73,13 @@ export default function ProjectGrid({ width }) {
                     img={zugabeImg}
                     imgWidth="40%"
                     title="Zugabe"
-                    href="/joplin"
+                    href="/zugabe"
                     description={
                         <span>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit facere alias, consequuntur laboriosam fugit, dolor quibusdam, cumque repellat commodi dolorem nemo blanditiis molestias exercitationem obcaecati dolores fugiat pariatur vero vel.
+                            ZUGABE is a rainwater management tool developed by Ingenieurgesellschaft Prof. Sieker mbH. The tool combines functions for analyzing spatial data with functions for group decision support.
+                            <br /> <br />
+                            During my master thesis, I added a feature for drawing spatial features and Docker support. 
+
                     </span>
                     }
                 />

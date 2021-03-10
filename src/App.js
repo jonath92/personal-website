@@ -9,6 +9,7 @@ import ScrollToTop from 'react-router-scroll-top'
 import Joplin from './pages/Joplin';
 import RadioApplet from './pages/RadioApplet'
 import Kanban from './pages/Kanban';
+import Zugabe from './pages/Zugabe';
 
 export default function App() {
   return (
@@ -21,7 +22,7 @@ export default function App() {
         <Route exact path='/joplin' component={Joplin} />
         <Route exact path='/radio-applet' component={RadioApplet} />
         <Route exact path='/kanban' component={Kanban} />
-
+        <Route exact path='/zugabe' component={Zugabe} />
       </ScrollToTop>
     </Router>
   )

@@ -3,7 +3,6 @@ import PageLayout from '../components/PageLayout'
 import { ProjectReport } from '../components/ProjectReport'
 import { importAllImgFromDirWithoutKey } from '../utils'
 import valueComplexityGraph from '../images/value-complexity.svg'
-import Figure from 'react-bootstrap/Figure'
 
 const imgContext = require.context('../images/screenshots/kanban', false, /\.(png|jpe?g|svg)$/)
 const screenshots = importAllImgFromDirWithoutKey(imgContext)
