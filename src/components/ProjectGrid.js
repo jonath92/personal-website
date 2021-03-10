@@ -76,9 +76,9 @@ export default function ProjectGrid({ width }) {
                     href="/zugabe"
                     description={
                         <span>
-                            ZUGABE is a rainwater management tool developed by Ingenieurgesellschaft Prof. Sieker mbH. The tool combines functions for analyzing spatial data with functions for group decision support.
+                            Zugabe is a rainwater management tool developed by Ingenieurgesellschaft Prof. Sieker mbH. The tool combines functions for analyzing spatial data with functions for group decision support.
                             <br /> <br />
-                            During my master thesis, I added a feature for drawing spatial features and Docker support. 
+                            During my master thesis, I added a feature for digitizing spatial features and implemented Docker support. 
 
                     </span>
                     }
