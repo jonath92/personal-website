@@ -1,0 +1,1 @@
+export const externalImgPath = 'assets/images/external'

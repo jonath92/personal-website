@@ -1,0 +1,35 @@
+[
+    {
+        "file": "pexels-lukas-574069.jpg",
+        "href": "https://www.pexels.com/photo/person-encoding-in-laptop-574071/",
+        "author": "Pixels.com",
+        "license": "Free to use",
+        "licenseLink": "https://www.pexels.com/license/"
+    },
+    {
+        "file": "Joplin-icon.svg",
+        "href": "https://raw.githubusercontent.com/laurent22/joplin/9bfc7d98608f01b02cd0fcbbcc9c0c9d42e9f245/Assets/JoplinIcon.svg",
+        "author": "Laurent Cozic",
+        "license": "MIT",
+        "licenseLink": "https://raw.githubusercontent.com/laurent22/joplin/dev/LICENSE"
+    },
+    {
+        "file": "calendar-check-solid.svg",
+        "href": "https://fontawesome.com/icons/calendar-check?style=solid",
+        "author": "Font Awesome",
+        "license": "CC BY 4.0 ",
+        "licenseLink": "https://fontawesome.com/license/free"
+    },
+    {
+        "file": "radioapplet-symbolic.svg",
+        "href": "https://raw.githubusercontent.com/linuxmint/cinnamon-spices-applets/master/radio@driglu4it/files/radio@driglu4it/icons/radioapplet-symbolic.svg",
+        "author": "Linux Mint",
+        "license": "GPL v3",
+        "licenseLink": "https://github.com/linuxmint/cinnamon#license"
+    },
+    {
+        "file": "zugabe.svg",
+        "href": "https://www.sieker.de/fileadmin/weblayout/Resources/Public/Images/sieker-logo-180.png",
+        "author": "Sieker"
+    }
+]
