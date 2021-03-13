@@ -1,6 +1,7 @@
 // external dependencies
 import styled from 'styled-components/macro'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { useState } from 'react'
 
 // own features
 import { coverImg, coverImgThumb } from 'assets/images/external/index'
@@ -38,16 +39,68 @@ const Textbox = styled.div`
     }
 `
 
+const TestH2 = styled.h2`
+::after {
+    content: '|';
+    transition: content 75ms
+}
+
+`
+
 const Cover = () => {
+
+    const [heading1, setHeading1] = useState("Hello, I’m Jonathan Heard.")
+
+    const heading1Final = "Hello, I’m Jonathan Heard."
+
+
+    async function typeHeading() {
+
+        const finalWordArr = [...heading1Final]
+        for (const char of finalWordArr) {
+            await addChar(char)
+        }
+
+    }
+
+    async function handleThumbnailLoaded() {
+        setHeading1("")
+        setTimeout(() => {
+            typeHeading()
+        }, 150)
+    }
+
+    function addChar(char: string) {
+        return new Promise<void>((resolve) => {
+            setTimeout(() => {
+                setHeading1(heading1 => heading1 + char)
+                resolve()
+            }, 150)
+        })
+    }
+
+
+
     return (
         <>
             {/* not optimal as the original image isn't loading stepwise. This is the case when not using styled component  */}
-            <FullPageImage src={coverImg} placeholderSrc={coverImgThumb} />
+            <FullPageImage src={coverImg} placeholderSrc={coverImgThumb} beforeLoad={() => handleThumbnailLoaded()} />
 
 
             <Textbox>
                 {/* <AnimatedTyping>Hello, I’m Jonathan Heard. </AnimatedTyping> */}
-                <h2 className="mb-4">Hello, I’m Jonathan Heard. </h2>
+                <div style={{ position: "relative", margin: "0 auto", textAlign: "center" }}>
+                    <h2 className="mb-4" style={{ opacity: 0, zIndex: -1 }}>{heading1Final}</h2>
+                    <div style={{ position: "absolute", top: 0, width: "100%", display: "block" }}>
+                        <TestH2 className="mb-4">{heading1} </TestH2>
+                    </div>
+                    <div>
+
+                    </div>
+
+                </div>
+
+
 
                 <h3>I want to make things that make a difference</h3>
             </Textbox>
