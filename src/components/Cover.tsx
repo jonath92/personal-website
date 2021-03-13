@@ -1,11 +1,12 @@
 // external dependencies
 import styled from 'styled-components/macro'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // own features
-import { coverImg } from 'assets/images/external/index'
+import { coverImg, coverImgThumb } from 'assets/images/external/index'
 
 // styles
-const FullPageImage = styled.img`
+const FullPageImage = styled(LazyLoadImage)`
     width: 100%;
     height: 100vh;
     object-fit: cover; 
@@ -40,7 +41,10 @@ const Textbox = styled.div`
 const Cover = () => {
     return (
         <>
-            <FullPageImage src={coverImg} />
+            {/* not optimal as the original image isn't loading stepwise. This is the case when not using styled component  */}
+            <FullPageImage src={coverImg} placeholderSrc={coverImgThumb} />
+
+
             <Textbox>
                 {/* <AnimatedTyping>Hello, I’m Jonathan Heard. </AnimatedTyping> */}
                 <h2 className="mb-4">Hello, I’m Jonathan Heard. </h2>
