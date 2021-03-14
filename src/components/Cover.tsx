@@ -52,13 +52,17 @@ const BlinkedCarred = styled.span`
 
 `
 
-// const FadeInText
+const FadeInText = styled.h3`
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+`
 
 
 const Cover = () => {
 
 
     const [finalWordArr, setFinalWordArr] = useState(initFinalWordArr())
+    const [opacity, setOpacity] = useState(0)
 
 
     useMount(async () => {
@@ -85,6 +89,8 @@ const Cover = () => {
         for (const [i, char] of finalWordArr.entries()) {
             await addChar(char, i)
         }
+        setTimeout(() => setOpacity(1), 500)
+
     }
 
     async function addChar(char: any, i: number) {
@@ -93,7 +99,6 @@ const Cover = () => {
 
                 const finalWordArrCopy = [...finalWordArr]
                 finalWordArrCopy[i].opacity = 100
-
 
                 if (i !== finalWordArrCopy.length - 1) {
                     finalWordArrCopy[i].isLastTypedChar = true
@@ -104,7 +109,6 @@ const Cover = () => {
                 }
 
                 setFinalWordArr(finalWordArrCopy)
-
                 resolve()
             }, 100)
         })
@@ -131,9 +135,7 @@ const Cover = () => {
                     })}
                 </h2>
 
-
-
-                <h3>I want to make things that make a difference</h3>
+                <FadeInText style={{ opacity: opacity }}>I want to make things that make a difference</FadeInText>
             </Textbox>
         </>
     )
