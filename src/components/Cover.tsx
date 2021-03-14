@@ -1,12 +1,13 @@
 // external dependencies
 import styled from 'styled-components/macro'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import React, { useState } from 'react'
+import { useMount } from 'react-use'
 
 // own features
-import { coverImg, coverImgThumb } from 'assets/images/external/index'
+import { coverImg } from 'assets/images/external/index'
 
 // styles
-const FullPageImage = styled(LazyLoadImage)`
+const FullPageImage = styled.img`
     width: 100%;
     height: 100vh;
     object-fit: cover; 
@@ -38,16 +39,99 @@ const Textbox = styled.div`
     }
 `
 
+const BlinkedCarred = styled.span`
+  border-right: .075em solid black; /* The typwriter cursor */
+  animation: 
+    blink-caret 100ms step-end 1;
+
+    /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black; }
+  }
+
+`
+
+// const FadeInText
+
+
 const Cover = () => {
+
+
+    const [finalWordArr, setFinalWordArr] = useState(initFinalWordArr())
+
+
+    useMount(async () => {
+        setTimeout(() => {
+            typeHeading()
+        }, 150)
+    })
+
+
+    function initFinalWordArr() {
+        const heading1Final = "Hello, I’m Jonathan Heard."
+        const finalWordArr = [...heading1Final].map(char => {
+            return {
+                opacity: 0,
+                isLastTypedChar: false,
+                char
+            }
+        })
+        return finalWordArr
+    }
+
+
+    async function typeHeading() {
+        for (const [i, char] of finalWordArr.entries()) {
+            await addChar(char, i)
+        }
+    }
+
+    async function addChar(char: any, i: number) {
+        return new Promise<void>((resolve) => {
+            setTimeout(() => {
+
+                const finalWordArrCopy = [...finalWordArr]
+                finalWordArrCopy[i].opacity = 100
+
+
+                if (i !== finalWordArrCopy.length - 1) {
+                    finalWordArrCopy[i].isLastTypedChar = true
+                }
+
+                if (i > 0) {
+                    finalWordArrCopy[i - 1].isLastTypedChar = false
+                }
+
+                setFinalWordArr(finalWordArrCopy)
+
+                resolve()
+            }, 100)
+        })
+    }
+
+
     return (
         <>
             {/* not optimal as the original image isn't loading stepwise. This is the case when not using styled component  */}
-            <FullPageImage src={coverImg} placeholderSrc={coverImgThumb} />
+            <FullPageImage src={coverImg} />
 
 
             <Textbox>
                 {/* <AnimatedTyping>Hello, I’m Jonathan Heard. </AnimatedTyping> */}
-                <h2 className="mb-4">Hello, I’m Jonathan Heard. </h2>
+                <h2 className="mb-4">
+
+                    {finalWordArr.map((charObj, index) => {
+                        return (
+                            <React.Fragment key={index}>
+                                <span style={{ opacity: charObj.opacity }}>{charObj.char}</span>
+                                {charObj.isLastTypedChar && <BlinkedCarred />}
+                            </React.Fragment>
+                        )
+                    })}
+                </h2>
+
+
 
                 <h3>I want to make things that make a difference</h3>
             </Textbox>
