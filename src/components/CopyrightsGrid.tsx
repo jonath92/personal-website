@@ -5,7 +5,6 @@ import styled from 'styled-components/macro'
 
 // own features
 import meta from 'assets/images/external/metadata.json'
-import { externalImgPath } from '../CONSTANTS'
 
 const GridContainer = styled.div`
     display: flex;
@@ -77,6 +76,9 @@ const CopyrightsGrid = () => {
     useMount(async () => {
         // TODO: set imgMeta as TS Interface
         const imgsWithMeta = await Promise.all(meta.map(async (imgMeta: ImgMeta) => {
+
+            const externalImgPath = 'assets/images/external'
+
             // not working when using absolut path ... 
             const file = await import(`../${externalImgPath}/${imgMeta.file}`)
             return { ...imgMeta, file: file.default }
