@@ -52,7 +52,7 @@ function useTyping(finalWord: string, startTyping: boolean) {
 
         if (!startTyping) return
 
-        const delay = lastTypedIndex < 0 ? 850 : 150
+        const delay = lastTypedIndex < 0 ? 850 : 100
         const timer = setTimeout(() => {
             setLastTypedIndex(lastTypedIndex => Math.min(lastTypedIndex + 1, finalWord.length))
         }, delay)

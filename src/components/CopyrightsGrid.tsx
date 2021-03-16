@@ -77,9 +77,10 @@ const CopyrightsGrid = () => {
         // TODO: set imgMeta as TS Interface
         const imgsWithMeta = await Promise.all(meta.map(async (imgMeta: ImgMeta) => {
 
+            // not working when using absolut path ... 
+            // build verson not working when importing externalImgPath from other module(e.g. constants)
             const externalImgPath = 'assets/images/external'
 
-            // not working when using absolut path ... 
             const file = await import(`../${externalImgPath}/${imgMeta.file}`)
             return { ...imgMeta, file: file.default }
         }))
