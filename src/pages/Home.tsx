@@ -33,10 +33,18 @@ const Project = styled.section.attrs(({
     /* background: #F3F3F3; */
 `
 
-const Home = () => {
+
+interface Props {
+    animationShown: boolean,
+    onAnimationFinished: { (): void }
+}
+
+const Home = ({ animationShown, onAnimationFinished }: Props) => {
+
+
     return (
         <>
-            <Cover />
+            <Cover showAnimation={!animationShown} {...{ onAnimationFinished }} />
             <Project >
                 <div style={{ width: "100%", display: "flex", justifyContent: "space-around" }}>
                     <H2>Projects</H2>

@@ -15,6 +15,7 @@ import { links } from 'types'
 function App() {
 
   const [landingPage, setLandingPage] = useState(true)
+  const [animationShown, setAnimationShown] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -22,10 +23,21 @@ function App() {
   }, [location])
 
 
+  function handleAnimationFinished() {
+    setAnimationShown(true)
+  }
+
+
   return (
     <Switch>
       <LayoutContainer isLandingPage={landingPage}>
-        <Route exact path={links.home.location} component={Home} />
+        <Route
+          exact
+          path={links.home.location}
+          render={() => (
+            <Home animationShown={animationShown} onAnimationFinished={() => handleAnimationFinished()} />
+          )}
+        />
         <Route exact path={links.copyrights.location} component={Copyright} />
         <Route exact path={links.disclaimer.location} component={Disclaimer} />
         <Route exact path={links.joplin.location} component={Joplin} />

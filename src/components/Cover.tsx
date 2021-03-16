@@ -1,10 +1,11 @@
 // external dependencies
 import styled from 'styled-components/macro'
-import React, { useState } from 'react'
-import { useMount } from 'react-use'
+import { useState, useEffect } from 'react'
 
 // own features
 import { coverImg } from 'assets/images/external/index'
+import { TypedWord } from './TypedWord'
+
 
 // styles
 const FullPageImage = styled.img`
@@ -38,104 +39,83 @@ const Textbox = styled.div`
         right    : 52vw;
     }
 `
-
-const BlinkedCarred = styled.span`
-  border-right: .075em solid black; /* The typwriter cursor */
-  animation: 
-    blink-caret 100ms step-end 1;
-
-    /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: black; }
-  }
-
-`
-
 const FadeInText = styled.h3`
   opacity: 0;
   transition: opacity 0.25s ease-out;
 `
 
 
-const Cover = () => {
+function useTyping(finalWord: string, startTyping: boolean) {
+    const [lastTypedIndex, setLastTypedIndex] = useState<number>(-1)
+
+    useEffect(() => {
+
+        if (!startTyping) return
+
+        const delay = lastTypedIndex < 0 ? 850 : 150
+        const timer = setTimeout(() => {
+            setLastTypedIndex(lastTypedIndex => Math.min(lastTypedIndex + 1, finalWord.length))
+        }, delay)
+
+        if (lastTypedIndex === finalWord.length) clearTimeout(timer)
+        return () => clearTimeout(timer)
+
+    }, [lastTypedIndex, finalWord.length, startTyping])
+
+    return lastTypedIndex
+}
+
+interface Props {
+    showAnimation: boolean,
+    onAnimationFinished: { (): void }
+}
+
+const Cover = ({ showAnimation, onAnimationFinished }: Props) => {
 
 
-    const [finalWordArr, setFinalWordArr] = useState(initFinalWordArr())
-    const [opacity, setOpacity] = useState(0)
+    const heading = "Hello, I am Jonathan Heard"
+    const subHeading = "I want to make things that make a difference"
 
 
-    useMount(async () => {
-        setTimeout(() => {
-            typeHeading()
-        }, 150)
-    })
+    const lastTypedIndex = useTyping(heading, showAnimation)
+    const [showSubHeading, setShowSubHeading] = useState(!showAnimation)
 
 
-    function initFinalWordArr() {
-        const heading1Final = "Hello, I’m Jonathan Heard."
-        const finalWordArr = [...heading1Final].map(char => {
-            return {
-                opacity: 0,
-                isLastTypedChar: false,
-                char
-            }
-        })
-        return finalWordArr
-    }
+    useEffect(() => {
+
+        if (lastTypedIndex < heading.length) return
+
+        const timer = setTimeout(() => {
+            setShowSubHeading(true)
+            onAnimationFinished()
+        }, 500)
+
+        return () => clearTimeout(timer)
+
+    }, [lastTypedIndex, onAnimationFinished])
 
 
-    async function typeHeading() {
-        for (const [i, char] of finalWordArr.entries()) {
-            await addChar(char, i)
-        }
-        setTimeout(() => setOpacity(1), 500)
-
-    }
-
-    async function addChar(char: any, i: number) {
-        return new Promise<void>((resolve) => {
-            setTimeout(() => {
-
-                const finalWordArrCopy = [...finalWordArr]
-                finalWordArrCopy[i].opacity = 100
-
-                if (i !== finalWordArrCopy.length - 1) {
-                    finalWordArrCopy[i].isLastTypedChar = true
-                }
-
-                if (i > 0) {
-                    finalWordArrCopy[i - 1].isLastTypedChar = false
-                }
-
-                setFinalWordArr(finalWordArrCopy)
-                resolve()
-            }, 100)
-        })
+    function renderFadeInText() {
+        const opacity = showSubHeading ? 100 : 0
+        return (
+            <FadeInText style={{ opacity: opacity }}>
+                {subHeading}
+            </FadeInText>
+        )
     }
 
 
     return (
         <>
-            {/* not optimal as the original image isn't loading stepwise. This is the case when not using styled component  */}
             <FullPageImage src={coverImg} />
 
 
             <Textbox>
-                {/* <AnimatedTyping>Hello, I’m Jonathan Heard. </AnimatedTyping> */}
                 <h2 className="mb-4">
-
-                    {finalWordArr.map((charObj, index) => {
-                        return (
-                            <React.Fragment key={index}>
-                                <span style={{ opacity: charObj.opacity }}>{charObj.char}</span>
-                                {charObj.isLastTypedChar && <BlinkedCarred />}
-                            </React.Fragment>
-                        )
-                    })}
+                    {showAnimation && <TypedWord finalWord={heading} {...{ lastTypedIndex }} />}
+                    {!showAnimation && heading}
                 </h2>
-
-                <FadeInText style={{ opacity: opacity }}>I want to make things that make a difference</FadeInText>
+                {renderFadeInText()}
             </Textbox>
         </>
     )
