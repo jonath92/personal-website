@@ -1,6 +1,7 @@
 // own features
 import { ProjectCard } from './ProjectCard'
 import { joplinIcon } from 'assets/images/external/index'
+import { links } from 'types'
 
 const JoplinCard = () => {
     return (
@@ -15,7 +16,7 @@ const JoplinCard = () => {
                     For the synchronisation users can select from a variety of cloud storage providers. However when I started using Joplin I was frustrated that it was not possible to synchronize attachments larger than 4 MB which I therefore fixed. Since then I also made some other contributions to the project.
                 </span>
             }
-            href="/joplin"
+            href={links.joplin.location}
         />
     )
 }

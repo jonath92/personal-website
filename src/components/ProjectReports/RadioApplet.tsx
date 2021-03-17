@@ -96,10 +96,7 @@ const RadioApplet = () => {
         )
     }
 
-
     return (
-
-
         <ProjectReport>
             {renderHeader()}
             {renderCarousel()}

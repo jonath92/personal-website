@@ -82,6 +82,8 @@ const Navbar = () => {
                     {renderLink('dropdown', links.joplin, 'Joplin')}
                     {renderLink('dropdown', links.radio, 'Linux Mint Radio Applet')}
                     {renderLink('dropdown', links.kanban, 'Kanban Board')}
+                    {renderLink('dropdown', links.zugabe, 'Zugabe')}
+
                 </NavDropdown>
             </>
 

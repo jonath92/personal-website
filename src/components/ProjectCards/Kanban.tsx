@@ -1,6 +1,7 @@
 // own features
 import { ProjectCard } from './ProjectCard'
 import { taskIcon } from 'assets/images/external/index'
+import { links } from 'types'
 
 const KanbanCard = () => {
     return (
@@ -15,7 +16,7 @@ const KanbanCard = () => {
                     For this reason I am currently working on a Kanban webapp with the focus on personal task management.
                 </span>
             }
-            href="/kanban"
+            href={links.kanban.location}
         />
     )
 }

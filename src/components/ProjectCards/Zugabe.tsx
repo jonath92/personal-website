@@ -1,6 +1,7 @@
 // own features
 import { ProjectCard } from './ProjectCard'
 import { zugabeIcon } from 'assets/images/external/index'
+import { links } from 'types'
 
 const ZugabeCard = () => {
     return (
@@ -15,7 +16,7 @@ const ZugabeCard = () => {
                     During my master thesis, I added a feature for digitizing spatial features and implemented Docker support.
                 </span>
             }
-            href="/zugabe"
+            href={links.zugabe.location}
         />
     )
 }

@@ -1,6 +1,7 @@
 // own features
 import { ProjectCard } from './ProjectCard'
 import { radioAppletIcon } from 'assets/images/external/index'
+import { links } from 'types'
 
 const RadioCard = () => {
     return (
@@ -15,7 +16,7 @@ const RadioCard = () => {
                     I have made multiple contributions to the Applet and currently being the official maintainer of the extension.
                 </span>
             }
-            href="/radio-applet"
+            href={links.radio.location}
         />
     )
 }

@@ -10,6 +10,7 @@ import { Joplin } from 'components/ProjectReports/Joplin'
 import { LayoutContainer } from 'components/PageLayout/LayoutContainer'
 import { RadioApplet } from 'components/ProjectReports/RadioApplet';
 import { Kanban } from 'components/ProjectReports/Kanban';
+import { Zugabe } from 'components/ProjectReports/Zugabe'
 import { links } from 'types'
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Route exact path={links.joplin.location} component={Joplin} />
         <Route exact path={links.radio.location} component={RadioApplet} />
         <Route exact path={links.kanban.location} component={Kanban} />
+        <Route exact path={links.zugabe.location} component={Zugabe} />
 
       </LayoutContainer>
 
