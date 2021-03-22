@@ -35,6 +35,7 @@ const Header = styled.div`
 
 interface SectionProps {
     backgroundColor?: boolean
+    id: string
 }
 
 const Section = styled.section.attrs(({
@@ -59,7 +60,7 @@ const Home = ({ animationShown, onAnimationFinished }: Props) => {
         <>
             <Cover showAnimation={!animationShown} {...{ onAnimationFinished }} />
 
-            <Section backgroundColor >
+            <Section backgroundColor id={links.overview.hash} >
                 <Header>
                     <H2>Projects</H2>
                 </Header>
@@ -67,7 +68,7 @@ const Home = ({ animationShown, onAnimationFinished }: Props) => {
             </Section>
 
             <Section>
-                <Header>
+                <Header id={links.skills.hash}>
                     <H2>Skills</H2>
                 </Header>
                 <SkillsBar />

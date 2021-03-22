@@ -97,6 +97,7 @@ const Navbar = () => {
                 <Nav className="mr-auto">
                     {renderLink('toplevel', links.home, 'Home')}
                     {renderProjectDropDown()}
+                    {renderLink('toplevel', links.skills, 'Skills')}
                 </Nav>
 
             </BootstrapNavbar.Collapse>
