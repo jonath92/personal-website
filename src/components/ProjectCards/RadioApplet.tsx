@@ -11,9 +11,9 @@ const RadioCard = () => {
             title="Linux Mint Radio Applet"
             description={
                 <span>
-                    Linux Mint is one of the most popular Linux distributions. A key feature of the distribution is the large number of easy installable extensions such as the Radio Applet.
+                    Linux Mint is one of the most popular Linux distributions. A key feature of the distribution is the large number of easilyy installable extensions such as the Radio Applet.
                     <br /> <br />
-                    I have made multiple contributions to the Applet and currently being the official maintainer of the extension.
+                    I have made multiple contributions to the Applet and am currently the official maintainer of the extension.
                 </span>
             }
             href={links.radio.location}

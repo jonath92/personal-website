@@ -5,6 +5,7 @@ import styled from 'styled-components/macro'
 import { Cover } from '../components/Cover'
 import { ProjectGrid } from '../components/ProjectGrid'
 import { links } from 'types'
+import { SkillsBar } from 'components/SkillsBar'
 
 //styles
 const H2 = styled.h2.attrs(({
@@ -26,6 +27,12 @@ const H2 = styled.h2.attrs(({
     }
 `
 
+const Header = styled.div` 
+    width: 100%;
+    display: flex;
+    justify-content: space-around
+`
+
 const Project = styled.section.attrs(({
     id: links.overview.hash
 }))`
@@ -45,13 +52,18 @@ const Home = ({ animationShown, onAnimationFinished }: Props) => {
     return (
         <>
             <Cover showAnimation={!animationShown} {...{ onAnimationFinished }} />
-            <Project >
-                <div style={{ width: "100%", display: "flex", justifyContent: "space-around" }}>
-                    <H2>Projects</H2>
 
-                </div>
+            {/* <Header>
+                <H2>Skills</H2>
+            </Header> */}
+            {/* <SkillsBar /> */}
+            <Project >
+                <Header>
+                    <H2>Projects</H2>
+                </Header>
                 <ProjectGrid />
             </Project>
+
         </>
     )
 }
