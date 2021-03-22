@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
+import VisibilitySensor from 'react-visibility-sensor'
 
 const BarContainer = styled.div`
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 30px;
-    margin-top: 45px
+    margin-top: 45px;
+
+    @media only screen and (min-width: 750px) {
+        flex-direction: row;
+    }
+
 `
 
 const BarLabel = styled.div` 
@@ -21,23 +28,54 @@ const BarLabel = styled.div`
 `
 const BarBackground = styled.div`
     width: 100%;
-    background-color: #e0e0de;
+    background-color: #f3f2f2;
+    display: flex;
+    height: 25px;
 `
 
-interface BarValueProps {
+interface Width {
     width: number
 }
 
 const BarValue = styled.div` 
-    background-color: #17a2b8;
-    width: ${(p: BarValueProps) => `${p.width}%`};
-    height: 100%
+    background-color: #A5D8DD;
+    width: ${(p: Width) => `${p.width}%`};
+    height: 100%;
+    transition: width 2s
+`
+
+const FullPageWidthContainer = styled.div` 
+    display: flex;
+    justify-content: space-around;
+    width: 100%
+`
+const OuterContainer = styled.div`  
+    width: 90%;
+    max-width: 600px;
+
+    div:first-child {
+        margin-top: 0
+    }
+`
+
+const TextContainer = styled.div` 
+    width: ${(p: Width) => `${p.width}%`};
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    align-self: flex-end;
+    flex: 1;
+
+    @media only screen and (min-width: 750px) {
+        display: flex;
+    }
 
 `
 
-
 const data = [
     { name: "JS", value: 90 },
+    { name: "Git", value: 90 },
+    // { name: "Gis", value: 80 },
     { name: "TypeScript", value: 80 },
     { name: "HTML", value: 80 },
     { name: "CSS", value: 80 },
@@ -48,39 +86,58 @@ const data = [
     { name: "Java", value: 40 }
 ]
 
-function renderBar(name: string, value: number) {
-    console.log(name)
-    return (
-        <BarContainer >
-            <BarLabel>
-                <h4>
-                    {name}
-
-                </h4>
-
-            </BarLabel>
-            <BarBackground>
-                <BarValue width={value} />
-
-            </BarBackground>
-        </BarContainer>
-    )
-}
 
 const SkillsBar = () => {
+
+    const [showBar, setShowBar] = useState(false)
+
+
+    function renderBar(name: string, value: number) {
+        return (
+            <BarContainer key={name} >
+                <BarLabel>
+                    <h5>
+                        {name}
+
+                    </h5>
+
+                </BarLabel>
+                <BarBackground>
+                    <BarValue width={showBar ? value : 0} />
+                    <TextContainer width={10}>
+                        {value} % &nbsp;
+                    </TextContainer>
+                </BarBackground>
+            </BarContainer >
+        )
+    }
+
+
+    function onChange(isVisible: boolean) {
+
+        if (isVisible) {
+            setShowBar(true)
+            console.log('Element is now %s', isVisible ? 'visible' : 'hidden');
+        }
+
+    }
+
     return (
-        <div style={{ display: "flex", justifyContent: "space-around", width: "100%" }}>
+        <VisibilitySensor partialVisibility onChange={onChange} minTopValue={400}>
 
-            <div style={{ width: "90%", maxWidth: "600px" }}>
-                {data.map(skill => {
-                    return (
-                        renderBar(skill.name, skill.value)
-                    )
-                })}
+            <FullPageWidthContainer>
+
+                <OuterContainer>
+                    {data.map(skill => {
+                        return (
+                            renderBar(skill.name, skill.value)
+                        )
+                    })}
 
 
-            </div>
-        </div>
+                </OuterContainer>
+            </FullPageWidthContainer>
+        </VisibilitySensor >
 
     )
 }

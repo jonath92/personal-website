@@ -1,7 +1,7 @@
 // just the disclaimer without any style. So can be easily used in other pages
 const Disclaimer = () => {
     return (
-        <>
+        <div style={{ paddingBottom: "30px" }}>
             <h1>Disclaimer</h1>
             <p>Last updated: February 15, 2021</p>
             <h1>Interpretation and Definitions</h1>
@@ -45,7 +45,7 @@ const Disclaimer = () => {
             <ul>
                 <li>By email: jonathanheard92@gmail.com</li>
             </ul>
-        </>
+        </div>
     )
 }
 

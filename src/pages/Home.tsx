@@ -5,7 +5,7 @@ import styled from 'styled-components/macro'
 import { Cover } from '../components/Cover'
 import { ProjectGrid } from '../components/ProjectGrid'
 import { links } from 'types'
-// import { SkillsBar } from 'components/SkillsBar'
+import { SkillsBar } from 'components/SkillsBar'
 
 //styles
 const H2 = styled.h2.attrs(({
@@ -33,11 +33,18 @@ const Header = styled.div`
     justify-content: space-around
 `
 
-const Project = styled.section.attrs(({
-    id: links.overview.hash
+interface SectionProps {
+    backgroundColor?: boolean
+}
+
+const Section = styled.section.attrs(({
+    id: links.overview.hash,
+    classNames: "mb-5"
 }))`
-    padding-bottom: 30px;
-    /* background: #F3F3F3; */
+    padding-bottom: 80px;
+    background: ${(p: SectionProps) => `${p.backgroundColor ? '#fbfbfb' : 'white'}`};
+    width: 100%
+
 `
 
 
@@ -48,21 +55,23 @@ interface Props {
 
 const Home = ({ animationShown, onAnimationFinished }: Props) => {
 
-
     return (
         <>
             <Cover showAnimation={!animationShown} {...{ onAnimationFinished }} />
 
-            {/* <Header>
-                <H2>Skills</H2>
-            </Header> */}
-            {/* <SkillsBar /> */}
-            <Project >
+            <Section backgroundColor >
                 <Header>
                     <H2>Projects</H2>
                 </Header>
                 <ProjectGrid />
-            </Project>
+            </Section>
+
+            <Section>
+                <Header>
+                    <H2>Skills</H2>
+                </Header>
+                <SkillsBar />
+            </Section>
 
         </>
     )
