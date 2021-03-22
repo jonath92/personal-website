@@ -5,7 +5,7 @@ import styled from 'styled-components/macro'
 import { Cover } from '../components/Cover'
 import { ProjectGrid } from '../components/ProjectGrid'
 import { links } from 'types'
-import { SkillsBar } from 'components/SkillsBar'
+// import { SkillsBar } from 'components/SkillsBar'
 
 //styles
 const H2 = styled.h2.attrs(({
