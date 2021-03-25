@@ -6,6 +6,7 @@ import { Cover } from '../components/Cover'
 import { ProjectGrid } from '../components/ProjectGrid'
 import { links } from 'types'
 import { SkillsBar } from 'components/SkillsBar'
+import { Contact } from 'components/Contact'
 
 //styles
 const H2 = styled.h2.attrs(({
@@ -60,8 +61,8 @@ const Home = ({ animationShown, onAnimationFinished }: Props) => {
         <>
             <Cover showAnimation={!animationShown} {...{ onAnimationFinished }} />
 
-            <Section backgroundColor id={links.overview.hash} >
-                <Header>
+            <Section backgroundColor  >
+                <Header id={links.overview.hash}>
                     <H2>Projects</H2>
                 </Header>
                 <ProjectGrid />
@@ -72,6 +73,15 @@ const Home = ({ animationShown, onAnimationFinished }: Props) => {
                     <H2>Skills</H2>
                 </Header>
                 <SkillsBar />
+            </Section>
+
+            <Section backgroundColor>
+                <Header id={links.contact.hash}>
+                    <H2>Contact</H2>
+                </Header>
+
+                <Contact />
+
             </Section>
 
         </>

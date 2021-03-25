@@ -1,5 +1,5 @@
 
-type LinkName = "home" | "overview" | "kanban" | "joplin" | "radio" | "disclaimer" | "copyrights" | "zugabe" | "skills"
+type LinkName = "home" | "overview" | "kanban" | "joplin" | "radio" | "disclaimer" | "copyrights" | "zugabe" | "skills" | "contact"
 
 export interface Link {
     hash?: string,
@@ -15,7 +15,8 @@ const links: Record<LinkName, Link> = {
     disclaimer: { location: '/disclaimer' },
     copyrights: { location: '/copyrights' },
     zugabe: { location: '/zugabe' },
-    skills: { hash: 'skills', location: '/' }
+    skills: { hash: 'skills', location: '/' },
+    contact: { hash: 'contact', location: '/' }
 }
 
 export { links }

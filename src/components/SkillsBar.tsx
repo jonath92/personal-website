@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+// external dependencies
+import { useState } from 'react'
 import styled from 'styled-components/macro'
 import VisibilitySensor from 'react-visibility-sensor'
 
@@ -16,13 +17,6 @@ const BarContainer = styled.div`
 `
 
 const BarLabel = styled.div` 
-    /* background-color: rgba(17,36,39,0.8); */
-    /* color: white; */
-    /* display: flex; */
-    /* vertical-align: bottom;
-    display: table-cell; */
-    /* align-items: center;  */
-    /* justify-content: space-around; */
     width: 150px;
     margin-right: 20px
 `
@@ -49,6 +43,7 @@ const FullPageWidthContainer = styled.div`
     justify-content: space-around;
     width: 100%
 `
+
 const OuterContainer = styled.div`  
     width: 90%;
     max-width: 600px;
@@ -115,26 +110,18 @@ const SkillsBar = () => {
 
     function onChange(isVisible: boolean) {
 
-        if (isVisible) {
-            setShowBar(true)
-            console.log('Element is now %s', isVisible ? 'visible' : 'hidden');
-        }
-
+        if (isVisible) setShowBar(true)
     }
 
     return (
         <VisibilitySensor partialVisibility onChange={onChange} minTopValue={400}>
-
             <FullPageWidthContainer>
-
                 <OuterContainer>
                     {data.map(skill => {
                         return (
                             renderBar(skill.name, skill.value)
                         )
                     })}
-
-
                 </OuterContainer>
             </FullPageWidthContainer>
         </VisibilitySensor >
