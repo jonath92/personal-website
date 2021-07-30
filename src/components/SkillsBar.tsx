@@ -34,8 +34,12 @@ interface Width {
 const BarValue = styled.div` 
     background-color: #A5D8DD;
     width: ${(p: Width) => `${p.width}%`};
-    height: 100%;
-    transition: width 2s
+    height: 25px;
+    transition: width 2s;
+
+    @media only screen and (min-width: 750px) {
+        height: 100%;
+    }
 `
 
 const FullPageWidthContainer = styled.div` 
@@ -114,7 +118,7 @@ const SkillsBar = () => {
     }
 
     return (
-        <VisibilitySensor partialVisibility onChange={onChange} minTopValue={400}>
+        <VisibilitySensor partialVisibility onChange={onChange} minTopValue={250}>
             <FullPageWidthContainer>
                 <OuterContainer>
                     {data.map(skill => {
