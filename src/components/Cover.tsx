@@ -49,7 +49,7 @@ const useTyping = (finalWord: string, startTyping: boolean) => {
   useEffect(() => {
     if (!startTyping) return;
 
-    const delay = lastTypedIndex < 0 ? 850 : 125;
+    const delay = 125;
     const timer = setTimeout(() => {
       setLastTypedIndex((lastTypedIndex) =>
         Math.min(lastTypedIndex + 1, finalWord.length)
