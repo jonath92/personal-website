@@ -40,7 +40,7 @@ const Textbox = styled.div`
 `;
 const FadeInText = styled.h3`
   opacity: 0;
-  transition: opacity 0.25s ease-out;
+  transition: opacity 0.5s ease-out;
 `;
 
 const useTyping = (finalWord: string, startTyping: boolean) => {
@@ -49,7 +49,7 @@ const useTyping = (finalWord: string, startTyping: boolean) => {
   useEffect(() => {
     if (!startTyping) return;
 
-    const delay = lastTypedIndex < 0 ? 850 : 100;
+    const delay = lastTypedIndex < 0 ? 850 : 125;
     const timer = setTimeout(() => {
       setLastTypedIndex((lastTypedIndex) =>
         Math.min(lastTypedIndex + 1, finalWord.length)
