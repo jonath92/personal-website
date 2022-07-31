@@ -30,9 +30,25 @@ export const DefaultPageLayout = (props: DefaultPageLayoutProps) => {
   const { children, isLandingPage = false } = props;
 
   return (
-    <OuterContainer>
-      {/* <div>TODO Navbar</div> */}
-      <Content {...{ isLandingPage }}>{children}</Content>
-    </OuterContainer>
+    <>
+      <style jsx global>{`
+        #__next {
+          height: 100%;
+        }
+
+        body {
+          height: 100%;
+        }
+
+        html {
+          height: 100%;
+        }
+      `}</style>
+
+      <OuterContainer>
+        {/* <div>TODO Navbar</div> */}
+        <Content {...{ isLandingPage }}>{children}</Content>
+      </OuterContainer>
+    </>
   );
 };

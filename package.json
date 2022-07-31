@@ -8,6 +8,10 @@
     "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@fontsource/roboto": "^4.5.7",
+    "@mui/material": "^5.9.2",
     "bootstrap": "^5.2.0",
     "next": "latest",
     "react": "^18.2.0",

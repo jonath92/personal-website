@@ -4,6 +4,7 @@ import Image from "next/image";
 import CoverImg from "../public/pexels-lukas-574069.jpg";
 import styled from "styled-components";
 import { TypedWord } from "./TypedWord";
+import { Box } from "@mui/material";
 
 interface CoverProps {
   showAnimation: boolean;
@@ -85,7 +86,7 @@ export const Cover = (props: CoverProps) => {
   }
 
   return (
-    <div style={{ width: "100%", height: "100vh", position: "relative" }}>
+    <Box sx={{ width: "100%", height: "100%", position: "relative" }}>
       <Image
         alt="Laptop"
         src={CoverImg}
@@ -106,6 +107,6 @@ export const Cover = (props: CoverProps) => {
         </h2>
         {renderFadeInText()}
       </Textbox>
-    </div>
+    </Box>
   );
 };
