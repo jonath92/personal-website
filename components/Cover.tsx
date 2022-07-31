@@ -89,15 +89,11 @@ export const Cover = (props: CoverProps) => {
       <Image
         alt="Laptop"
         src={CoverImg}
-        width="100%"
-        height="100%"
         layout="fill"
+        objectFit="cover"
+        priority
         style={{
-          objectFit: "cover",
-          width: "100%",
-          height: "100vh",
           opacity: 0.75,
-          position: "relative",
           zIndex: -1,
         }}
       />
