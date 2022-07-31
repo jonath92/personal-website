@@ -85,14 +85,17 @@ export const Cover = (props: CoverProps) => {
   }
 
   return (
-    <>
+    <div style={{ width: "100%", height: "100vh", position: "relative" }}>
       <Image
         alt="Laptop"
         src={CoverImg}
         width="100%"
-        height="100vh"
+        height="100%"
+        layout="fill"
         style={{
           objectFit: "cover",
+          width: "100%",
+          height: "100vh",
           opacity: 0.75,
           position: "relative",
           zIndex: -1,
@@ -107,6 +110,6 @@ export const Cover = (props: CoverProps) => {
         </h2>
         {renderFadeInText()}
       </Textbox>
-    </>
+    </div>
   );
 };
