@@ -12,3 +12,7 @@ const Template: ComponentStory<typeof CoverComponent> = (args) => (
   <CoverComponent {...args} />
 );
 export const Cover = Template.bind({});
+
+Cover.args = {
+  showAnimation: true,
+};

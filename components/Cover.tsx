@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 import CoverImg from "../public/pexels-lukas-574069.jpg";
-import styled from "styled-components";
 import { TypedWord } from "./TypedWord";
 import { Box } from "@mui/material";
 import { TextBox } from "./TextBox";
@@ -11,11 +10,6 @@ interface CoverProps {
   showAnimation: boolean;
   onAnimationFinished: () => void;
 }
-
-const FadeInText = styled.h3`
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
-`;
 
 const useTyping = (finalWord: string, startTyping: boolean) => {
   const [lastTypedIndex, setLastTypedIndex] = useState<number>(-1);
@@ -57,11 +51,6 @@ export const Cover = (props: CoverProps) => {
     return () => clearTimeout(timer);
   }, [lastTypedIndex, onAnimationFinished]);
 
-  function renderFadeInText() {
-    const opacity = showSubHeading ? 100 : 0;
-    return <FadeInText style={{ opacity: opacity }}>{subHeading}</FadeInText>;
-  }
-
   return (
     <Box sx={{ width: "100%", height: "100%", position: "relative" }}>
       <Image
@@ -98,7 +87,15 @@ export const Cover = (props: CoverProps) => {
           )}
           {!showAnimation && heading}
         </h2>
-        {renderFadeInText()}
+        <Box
+          component="h3"
+          sx={{
+            opacity: showSubHeading ? 100 : 0,
+            transition: "opacity 0.5s ease-out",
+          }}
+        >
+          {subHeading}
+        </Box>
       </TextBox>
     </Box>
   );
