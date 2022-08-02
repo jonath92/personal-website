@@ -9,6 +9,7 @@ import {
 import Cards from "../components/cards";
 import { Cover } from "../components/Cover";
 import { DefaultPageLayout } from "../layouts/DefaultPageLayout";
+import { BlinkedCarred } from "../components/BlinkedCarred";
 
 export default function Home() {
   return (
